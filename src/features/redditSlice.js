@@ -48,25 +48,31 @@ const redditSlice = createSlice({
         builder
             .addCase(fetchHotPosts.pending, (state) => {
                 state.status = 'loading';
+                console.log('loading...');
             })
             .addCase(fetchHotPosts.fulfilled, (state, action) => {
                 state.status = 'succeeded';
                 state.posts = action.payload;
+                console.log('succeeded');
             })
             .addCase(fetchHotPosts.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.error.message;
+                console.log('failed');
             })
             .addCase(searchPosts.pending, (state) => {
                 state.status = 'loading';
+                console.log('loading...');
             })
             .addCase(searchPosts.fulfilled, (state, action) => {
                 state.status = 'succeeded';
                 state.posts = action.payload;
+                console.log('succeeded');
             })
             .addCase(searchPosts.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.error.message;
+                console.log('failed');
             });                 
 
     },
