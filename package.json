@@ -1,6 +1,6 @@
 {
   "name": "reddit-app",
-  "homepage": "https://peterp205.github.io/reddit-app",
+  "homepage": "http://peterp205.github.io/reddit-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

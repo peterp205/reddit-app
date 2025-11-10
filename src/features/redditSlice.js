@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk }  from '@reduxjs/toolkit';
 import { type } from '@testing-library/user-event/dist/type';
 
-const fetchHotPosts = createAsyncThunk('reddit/fetchHotPosts', async (subreddit) => {
+const fetchHotPosts = createAsyncThunk('reddit/fetchHotPosts', async (subreddit = 'popular') => {
     const response = await fetch(`https://www.reddit.com/r/${subreddit}/hot.json`);
     const data = await response.json();
     return data.data.children.map(post => ({
@@ -17,7 +17,7 @@ const fetchHotPosts = createAsyncThunk('reddit/fetchHotPosts', async (subreddit)
     }));
 });
 
-const searchPosts = createAsyncThunk('reddit/searchPosts', async ({subreddit, query}) => {
+const searchPosts = createAsyncThunk('reddit/searchPosts', async ({ subreddit = 'popular', query }) => {
     const response = await fetch(`https://www.reddit.com/r/${subreddit}/search.json?q=${query}&restrict_sr=1`);
     const data = await response.json();
     return data.data.children.map(post => ({
