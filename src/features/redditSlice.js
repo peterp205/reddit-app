@@ -75,7 +75,7 @@ const redditSlice = createSlice({
 // Selectors
 export const selectPosts = (state) => state.reddit.posts;
 export const selectStatus = (state) => state.reddit.status;
-export const selectoError = (state) => state.reddit.error;
+export const selectError = (state) => state.reddit.error;
 
 // Export the async thunks
 export { fetchHotPosts, searchPosts };
